@@ -32,30 +32,30 @@ public class Tresenralla {
         Jugador j1 = new Jugador();
         Jugador j2 = new Jugador();
         
-        t.CrearTablero();
+        
             System.out.println("Nombre del Jugador1");
             j1.setNombreJugador(br.readLine());
             j1.setFichas("X");
             System.out.println("Nombre del Jugador2");
             j2.setNombreJugador(br.readLine());
             j2.setFichas("0");
-            
+            t.CrearTablero();
         while(b){
             
             
             if(turno==1){
-            System.out.println("Jugador 1 Introduce filas 1-3");
+            System.out.println(j1.getNombreJugador()+" Introduce filas 1-3");
             filas = Integer.parseInt(br.readLine());
-            System.out.println("Jugador 1 Introduce columnas 1-3");
+            System.out.println(j1.getNombreJugador()+" Introduce columnas 1-3");
             columnas = Integer.parseInt(br.readLine());
             t.ComprobarTablero(filas, columnas, j1.getFichas());
             turno=2;
             t.mostrarTablero();
             }
             if(turno==2){
-            System.out.println("Jugador 2 Introduce filas 1-3");
+            System.out.println(j2.getNombreJugador()+" Introduce filas 1-3");
             filas = Integer.parseInt(br.readLine());
-            System.out.println("Jugador 2 Introduce columnas 1-3");
+            System.out.println(j2.getNombreJugador()+" Introduce columnas 1-3");
             columnas = Integer.parseInt(br.readLine());
             t.ComprobarTablero(filas, columnas, j2.getFichas());
             t.mostrarTablero();
