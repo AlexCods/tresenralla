@@ -47,7 +47,6 @@ public class Tresenralla {
             }
 
             if (turno == 2) {
-
                 System.out.println("Introduce filas 1-3");
                 filas = Integer.parseInt(br.readLine());
                 System.out.println("Introduce columnas 1-3");

@@ -40,25 +40,24 @@ public class Tablero {
         for (int i = 0; i < str.length; i++) {
             for (int j = 0; j < str[i].length; j++) {
                 if (j == 2) {
-                    System.out.println("");
+                    System.out.print(str[i][j]);
+                } else {
+                    System.out.print(str[i][j] + "|");
                 }
-                System.out.print(str[i][j] + "|");
             }
+            System.out.println("");
         }
     }
     public void ComprobarTablero(int filas, int columnas, String fichas) {
-
         if (str[filas - 1][columnas - 1].equals("X") || str[filas - 1][columnas - 1].equals("0")) {
-            
+            System.out.println("Ya hay una ficha en ese tablero.");
         } else {
             RellenarTablero(filas, columnas, fichas);
-
         }
     }
 
     public void RellenarTablero(int filas, int columnas, String fichas) {
         str[filas - 1][columnas - 1] = fichas;
-
     }
 
 }
