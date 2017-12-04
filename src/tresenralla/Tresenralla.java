@@ -29,10 +29,17 @@ public class Tresenralla {
         int columnas;
         int turno = 1;
         Tablero t = new Tablero();
-
-        Jugador j1 = new Jugador(1,"X");
-        Jugador j2 = new Jugador(2,"0");
+        Jugador j1 = new Jugador();
+        Jugador j2 = new Jugador();
+        
         t.CrearTablero();
+            System.out.println("Nombre del Jugador1");
+            j1.setNombreJugador(br.readLine());
+            j1.setFichas("X");
+            System.out.println("Nombre del Jugador2");
+            j2.setNombreJugador(br.readLine());
+            j2.setFichas("0");
+            
         while(b){
             
             

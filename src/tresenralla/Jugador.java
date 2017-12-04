@@ -10,12 +10,34 @@ package tresenralla;
  * @author USER
  */
 public class Jugador {
+
     private int idJugador;
+    private String nombreJugador;
     private String fichas;
-    
-    public Jugador(int idJugador,String fichas){
-    this.fichas=fichas;
-    this.idJugador=idJugador;
+
+    public Jugador() {
+        
+    }
+
+    public void setNombreJugador(String nombreJugador) {
+        this.nombreJugador = nombreJugador;
+    }
+
+    public void setIdJugador(int idJugador) {
+        this.idJugador = idJugador;
+    }
+
+    public void setFichas(String fichas) {
+        this.fichas = fichas;
+    }
+
+    public String getNombreJugador() {
+        return nombreJugador;
+    }
+
+    public Jugador(int idJugador, String fichas) {
+        this.fichas = fichas;
+        this.idJugador = idJugador;
     }
 
     public int getIdJugador() {
@@ -25,6 +47,5 @@ public class Jugador {
     public String getFichas() {
         return fichas;
     }
-    
-    
+
 }
