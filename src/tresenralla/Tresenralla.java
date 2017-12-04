@@ -29,7 +29,7 @@ public class Tresenralla {
         int columnas;
         int turno = 1;
         Tablero t = new Tablero();
-<<<<<<< HEAD
+
         Jugador j1 = new Jugador(1,"X");
         Jugador j2 = new Jugador(2,"0");
         t.CrearTablero();
@@ -37,55 +37,29 @@ public class Tresenralla {
             
             
             if(turno==1){
-            System.out.println("Introduce filas 1-3");
+            System.out.println("Jugador 1 Introduce filas 1-3");
             filas = Integer.parseInt(br.readLine());
-            System.out.println("Introduce columnas 1-3");
+            System.out.println("Jugador 1 Introduce columnas 1-3");
             columnas = Integer.parseInt(br.readLine());
-            t.ComprobarTablero(filas, columnas, j2.getFichas());
+            t.ComprobarTablero(filas, columnas, j1.getFichas());
             turno=2;
+            t.mostrarTablero();
             }
             if(turno==2){
-            System.out.println("Introduce filas 1-3");
+            System.out.println("Jugador 2 Introduce filas 1-3");
             filas = Integer.parseInt(br.readLine());
-            System.out.println("Introduce columnas 1-3");
+            System.out.println("Jugador 2 Introduce columnas 1-3");
             columnas = Integer.parseInt(br.readLine());
             t.ComprobarTablero(filas, columnas, j2.getFichas());
-=======
-        Jugador j1 = new Jugador(1, "X");
-        Jugador j2 = new Jugador(2, "0");
-        t.CrearTablero();
-
-        while (b) {
-
-            if (turno == 1) {
-
-                System.out.println("Introduce filas 1-3");
-                filas = Integer.parseInt(br.readLine());
-                System.out.println("Introduce columnas 1-3");
-                columnas = Integer.parseInt(br.readLine());
-                t.ComprobarTablero(filas, columnas, j1.getFichas());
-                t.mostrarTablero();
-                turno = 2;
+            t.mostrarTablero();
             }
-
-            if (turno == 2) {
-                System.out.println("Introduce filas 1-3");
-                filas = Integer.parseInt(br.readLine());
-                System.out.println("Introduce columnas 1-3");
-                columnas = Integer.parseInt(br.readLine());
-                t.ComprobarTablero(filas, columnas, j2.getFichas());
-                t.mostrarTablero();
-                turno = 1;
->>>>>>> c9491f2a8f43b212b52244dd528110d9cafe1278
+            if(count==9){
+                b=false;
+            }else{
+            count++;
             }
-
-            if (count == 9) {
-                b = false;
-            } else {
-                count++;
-            }
-
-        }
+            
     }
 
+}
 }
