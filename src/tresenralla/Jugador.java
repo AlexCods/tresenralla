@@ -14,9 +14,14 @@ public class Jugador {
     private int idJugador;
     private String nombreJugador;
     private String fichas;
+    private int partidasGanadas;
 
     public Jugador() {
         
+    }
+
+    public void setPartidasGanadas(int partidasGanadas) {
+        this.partidasGanadas = partidasGanadas;
     }
 
     public void setNombreJugador(String nombreJugador) {
