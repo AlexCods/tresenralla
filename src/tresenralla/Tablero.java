@@ -35,15 +35,23 @@ public class Tablero {
         }
 
     }
-
-    public boolean ComprobarTablero(int filas, int columnas, String fichas) {
+    
+    public void mostrarTablero(){
+        for (int i = 0; i < str.length; i++) {
+            for (int j = 0; j < str[i].length; j++) {
+                if (j == 2) {
+                    System.out.println("");
+                }
+                System.out.print(str[i][j] + "|");
+            }
+        }
+    }
+    public void ComprobarTablero(int filas, int columnas, String fichas) {
 
         if (str[filas - 1][columnas - 1].equals("X") || str[filas - 1][columnas - 1].equals("0")) {
-
-            return true;
+            
         } else {
             RellenarTablero(filas, columnas, fichas);
-            return false;
 
         }
     }
