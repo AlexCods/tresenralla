@@ -22,14 +22,14 @@ public class Tresenralla {
         // TODO code application logic here
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String[][] str = new String[3][3];
-        
-        
+
         boolean b = true;
         int count = 1;
         int filas;
         int columnas;
-        int turno=1;
+        int turno = 1;
         Tablero t = new Tablero();
+<<<<<<< HEAD
         Jugador j1 = new Jugador(1,"X");
         Jugador j2 = new Jugador(2,"0");
         t.CrearTablero();
@@ -50,15 +50,43 @@ public class Tresenralla {
             System.out.println("Introduce columnas 1-3");
             columnas = Integer.parseInt(br.readLine());
             t.ComprobarTablero(filas, columnas, j2.getFichas());
+=======
+        Jugador j1 = new Jugador(1, "X");
+        Jugador j2 = new Jugador(2, "0");
+        t.CrearTablero();
+
+        while (b) {
+
+            if (turno == 1) {
+
+                System.out.println("Introduce filas 1-3");
+                filas = Integer.parseInt(br.readLine());
+                System.out.println("Introduce columnas 1-3");
+                columnas = Integer.parseInt(br.readLine());
+                t.ComprobarTablero(filas, columnas, j1.getFichas());
+                t.mostrarTablero();
+                turno = 2;
             }
-            if(count==9){
-            b=false;
-            }else{
-            count++;
+
+            if (turno == 2) {
+
+                System.out.println("Introduce filas 1-3");
+                filas = Integer.parseInt(br.readLine());
+                System.out.println("Introduce columnas 1-3");
+                columnas = Integer.parseInt(br.readLine());
+                t.ComprobarTablero(filas, columnas, j2.getFichas());
+                t.mostrarTablero();
+                turno = 1;
+>>>>>>> c9491f2a8f43b212b52244dd528110d9cafe1278
             }
-            
+
+            if (count == 9) {
+                b = false;
+            } else {
+                count++;
+            }
+
+        }
     }
-    }
-    
-    
+
 }

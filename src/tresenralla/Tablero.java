@@ -35,6 +35,7 @@ public class Tablero {
         }
 
     }
+<<<<<<< HEAD
 
     public void ComprobarTablero(int filas, int columnas, String fichas) {
 
@@ -44,6 +45,25 @@ public class Tablero {
         } else {
             RellenarTablero(filas, columnas, fichas);
             
+=======
+    
+    public void mostrarTablero(){
+        for (int i = 0; i < str.length; i++) {
+            for (int j = 0; j < str[i].length; j++) {
+                if (j == 2) {
+                    System.out.println("");
+                }
+                System.out.print(str[i][j] + "|");
+            }
+        }
+    }
+    public void ComprobarTablero(int filas, int columnas, String fichas) {
+
+        if (str[filas - 1][columnas - 1].equals("X") || str[filas - 1][columnas - 1].equals("0")) {
+            
+        } else {
+            RellenarTablero(filas, columnas, fichas);
+>>>>>>> c9491f2a8f43b212b52244dd528110d9cafe1278
 
         }
     }
