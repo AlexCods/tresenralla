@@ -36,14 +36,14 @@ public class Tablero {
 
     }
 
-    public boolean ComprobarTablero(int filas, int columnas, String fichas) {
+    public void ComprobarTablero(int filas, int columnas, String fichas) {
 
         if (str[filas - 1][columnas - 1].equals("X") || str[filas - 1][columnas - 1].equals("0")) {
 
-            return true;
+            
         } else {
             RellenarTablero(filas, columnas, fichas);
-            return false;
+            
 
         }
     }

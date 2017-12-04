@@ -32,26 +32,24 @@ public class Tresenralla {
         Tablero t = new Tablero();
         Jugador j1 = new Jugador(1,"X");
         Jugador j2 = new Jugador(2,"0");
-        
+        t.CrearTablero();
         while(b){
-            t.CrearTablero();
+            
             
             if(turno==1){
-            turno=2;
-            System.out.println("Introduce filas 1-3");
-            filas = Integer.parseInt(br.readLine());
-            System.out.println("Introduce columnas 1-3");
-            columnas = Integer.parseInt(br.readLine());
-            
-            }
-            if(turno==2){
-                turno=1;
             System.out.println("Introduce filas 1-3");
             filas = Integer.parseInt(br.readLine());
             System.out.println("Introduce columnas 1-3");
             columnas = Integer.parseInt(br.readLine());
             t.ComprobarTablero(filas, columnas, j2.getFichas());
-            
+            turno=2;
+            }
+            if(turno==2){
+            System.out.println("Introduce filas 1-3");
+            filas = Integer.parseInt(br.readLine());
+            System.out.println("Introduce columnas 1-3");
+            columnas = Integer.parseInt(br.readLine());
+            t.ComprobarTablero(filas, columnas, j2.getFichas());
             }
             if(count==9){
             b=false;
