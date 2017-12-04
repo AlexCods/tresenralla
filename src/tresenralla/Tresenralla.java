@@ -22,44 +22,44 @@ public class Tresenralla {
         // TODO code application logic here
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String[][] str = new String[3][3];
-        for (int i = 0; i < str.length; i++) {
-            for (int j = 0; j < str[i].length; j++) {
-               str[i][j] = " ";
-            }
-        }
+        
         
         boolean b = true;
         int count = 1;
         int filas;
         int columnas;
+        int turno=1;
+        Tablero t = new Tablero();
+        Jugador j1 = new Jugador(1,"X");
+        Jugador j2 = new Jugador(2,"0");
         
         while(b){
+            t.CrearTablero();
             
-            if (count == 9) {
-                b = false;
-            } else {
-                for (int i = 0; i < str.length; i++) {
-                    for (int j = 0; j < str[i].length; j++) {
-                        if (j == 2) {
-                            System.out.print(str[i][j]);
-                        } else {
-                            System.out.print(str[i][j] + "|");
-                        }
-
-                    }
-                    System.out.println("");
-                }
-                System.out.println("Inserta Fila (1-3)");
-                filas = Integer.parseInt(br.readLine());
-                System.out.println("Inserta Columna (1-3)");
-                columnas = Integer.parseInt(br.readLine());
-               
-                str[filas-1][columnas-1] = "X";
-              
-                
-                count++;
+            if(turno==1){
+            turno=2;
+            System.out.println("Introduce filas 1-3");
+            filas = Integer.parseInt(br.readLine());
+            System.out.println("Introduce columnas 1-3");
+            columnas = Integer.parseInt(br.readLine());
+            
             }
-        }
+            if(turno==2){
+                turno=1;
+            System.out.println("Introduce filas 1-3");
+            filas = Integer.parseInt(br.readLine());
+            System.out.println("Introduce columnas 1-3");
+            columnas = Integer.parseInt(br.readLine());
+            t.ComprobarTablero(filas, columnas, j2.getFichas());
+            
+            }
+            if(count==9){
+            b=false;
+            }else{
+            count++;
+            }
+            
+    }
     }
     
     
