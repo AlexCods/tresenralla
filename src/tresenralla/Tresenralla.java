@@ -40,31 +40,50 @@ public class Tresenralla {
             j2.setNombreJugador(br.readLine());
             j2.setFichas("0");
             t.CrearTablero();
+            
         while(b){
             
+            if(turno==2){
+            System.out.println(j2.getNombreJugador()+" Introduce filas 1-3");
+            filas = Integer.parseInt(br.readLine());
+            System.out.println(j2.getNombreJugador()+" Introduce columnas 1-3");
+            columnas = Integer.parseInt(br.readLine());
+            turno = 1;
+            if(t.ComprobarTablero(filas, columnas, j2.getFichas())){
+                turno = 2;
+            } else {
+                count++;
+            }
+            t.mostrarTablero();
+            
+            }
             
             if(turno==1){
             System.out.println(j1.getNombreJugador()+" Introduce filas 1-3");
             filas = Integer.parseInt(br.readLine());
             System.out.println(j1.getNombreJugador()+" Introduce columnas 1-3");
             columnas = Integer.parseInt(br.readLine());
-            t.ComprobarTablero(filas, columnas, j1.getFichas());
-            turno=2;
-            t.mostrarTablero();
+            turno = 2;
+            if(t.ComprobarTablero(filas, columnas, j1.getFichas())){
+                turno=1;
+            } else {
+                count++;
             }
-            if(turno==2){
-            System.out.println(j2.getNombreJugador()+" Introduce filas 1-3");
-            filas = Integer.parseInt(br.readLine());
-            System.out.println(j2.getNombreJugador()+" Introduce columnas 1-3");
-            columnas = Integer.parseInt(br.readLine());
-            t.ComprobarTablero(filas, columnas, j2.getFichas());
+            
             t.mostrarTablero();
-            }
-            if(count==9){
+            }      
+            
+            if(count==10 && !t.comprobarVictoria()){
+                System.out.println("Ya no quedan fichas disponibles, Empate!");
                 b=false;
-            }else{
-            count++;
             }
+            
+            
+                if (t.comprobarVictoria()) {
+                    System.out.println("Algun jugador ha ganado");
+                   
+                }
+            
             
     }
 

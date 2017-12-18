@@ -49,17 +49,41 @@ public class Tablero {
         }
     }
 
-    public void ComprobarTablero(int filas, int columnas, String fichas) {
+    public boolean ComprobarTablero(int filas, int columnas, String fichas) {
         if (str[filas - 1][columnas - 1].equals("X") || str[filas - 1][columnas - 1].equals("0")) {
             System.out.println("Ya hay una ficha en ese tablero.");
+            return true;
         } else {
             RellenarTablero(filas, columnas, fichas);
-
+            return false;
         }
     }
 
     public void RellenarTablero(int filas, int columnas, String fichas) {
         str[filas - 1][columnas - 1] = fichas;
+    }
+    
+    public boolean comprobarVictoria(){
+         for (int i = 0; i < str.length; i++) {
+            for (int j = 0; j < str[i].length; j++) {
+                if (str[i][j] == "X" ){
+                    if (str[i][j+1] == "X") {
+                        if (str[i][j+2] == "X") {
+                            return true;
+                        }
+                    } else if(str[i][j+1] == "X"){
+                        if (str[i][j+2] == "X") {
+                            return true;
+                        }
+                    } else if (str[i+1][j+1] == "X") {
+                        if (str[i+2][j+2] == "X") {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
     }
 
 }

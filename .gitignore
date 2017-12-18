@@ -9,3 +9,5 @@ t-directory/
 	+ src/
 	+ test/
 	+ build.xml
+/nbproject/private/
+/build/
