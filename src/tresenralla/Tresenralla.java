@@ -79,10 +79,10 @@ public class Tresenralla {
             }
             
             
-                if (t.comprobarVictoria()) {
-                    System.out.println("Algun jugador ha ganado");
-                   
-                }
+            if (t.comprobarVictoria()) {
+                System.out.println("Algun jugador ha ganado");
+                break;
+            }
             
             
     }

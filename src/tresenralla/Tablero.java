@@ -66,20 +66,44 @@ public class Tablero {
     public boolean comprobarVictoria(){
          for (int i = 0; i < str.length; i++) {
             for (int j = 0; j < str[i].length; j++) {
-                if (str[i][j] == "X" ){
-                    if (str[i][j+1] == "X") {
-                        if (str[i][j+2] == "X") {
-                            return true;
-                        }
-                    } else if(str[i][j+1] == "X"){
-                        if (str[i][j+2] == "X") {
-                            return true;
-                        }
-                    } else if (str[i+1][j+1] == "X") {
-                        if (str[i+2][j+2] == "X") {
-                            return true;
+                try{
+                    if (str[i][j] == "X" ){
+                        if (str[i][j+1] == "X") {
+                            if (str[i][j+2] == "X") {
+                                return true;
+                            }
+                        } else if(str[i+1][j] == "X"){
+                            if (str[i+2][j] == "X") {
+                                return true;
+                            }
+                        } else if (str[i+1][j+1] == "X") {
+                            if (str[i+2][j+2] == "X") {
+                                return true;
+                            }
                         }
                     }
+                } catch(ArrayIndexOutOfBoundsException e){
+                   
+                }
+                
+                try{
+                    if (str[i][j] == "0" ){
+                        if (str[i][j+1] == "0") {
+                            if (str[i][j+2] == "0") {
+                                return true;
+                            }
+                        } else if(str[i+1][j] == "0"){
+                            if (str[i+2][j] == "0") {
+                                return true;
+                            }
+                        } else if (str[i+1][j+1] == "0") {
+                            if (str[i+2][j+2] == "0") {
+                                return true;
+                            }
+                        }
+                    }
+                } catch(ArrayIndexOutOfBoundsException e){
+                   
                 }
             }
         }
